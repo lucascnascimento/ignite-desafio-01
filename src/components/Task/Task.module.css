@@ -1,0 +1,86 @@
+.task {
+  display: flex;
+  gap: var(--size-12);
+  align-items: flex-start;
+  padding: var(--size-16);
+  background-color: var(--gray-500);
+  border: 1px solid #333333;
+  border-radius: 8px;
+}
+
+.checkboxContainer {
+  position: relative;
+  margin-right: var(--size-16);
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--size-18);
+  width: var(--size-18);
+  border: 2px solid var(--blue);
+  border-radius: var(--size-9);
+  background-color: transparent;
+}
+
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: var(--blue);
+  opacity: 0.5;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+.checkboxContainer input:checked ~ .checkmark:hover {
+  opacity: 0.8;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxContainer .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 8px;
+  border: solid var(--gray-200);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.task button {
+  color: var(--gray-300);
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.task button:hover {
+  color: var(--danger);
+  background-color: var(--gray-300);
+}

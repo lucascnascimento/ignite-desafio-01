@@ -1,0 +1,22 @@
+.status {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.tasksCreated {
+  color: var(--blue);
+}
+
+.numberWrapper {
+  font-size: var(--font-size-12);
+  color: var(--gray-200);
+  background-color: var(--gray-400);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: var(--size-8);
+}
+
+.tasksCompleted {
+  color: var(--purple);
+}
