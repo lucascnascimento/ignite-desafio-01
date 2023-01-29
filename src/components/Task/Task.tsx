@@ -8,21 +8,27 @@ type TaskProps = {
   onCheckTask: (id: string, isChecked: boolean) => void;
 };
 
+const getTaskStyles = (isDone: boolean) => {
+  if (isDone) return `${styles.task} ${styles.taskDone}`;
+
+  return styles.task;
+};
+
 export const Task = ({ task, onDeleteTask, onCheckTask }: TaskProps) => {
-  const handleDeleteTask = () => onDeleteTask(task.id);
+  const { id, isDone, text } = task;
+  const handleDeleteTask = () => onDeleteTask(id);
 
   const handleCheckboxChange = () => {
-    console.log("handleCheckboxChange");
-    onCheckTask(task.id, !task.isDone);
+    onCheckTask(id, !isDone);
   };
 
   return (
-    <div className={styles.task}>
+    <div className={getTaskStyles(isDone)}>
       <div className={styles.checkboxContainer} onClick={handleCheckboxChange}>
         <input type={"checkbox"} checked={task.isDone} readOnly />
         <span className={styles.checkmark} />
       </div>
-      <p>{task.text}</p>
+      <p>{text}</p>
       <button onClick={handleDeleteTask}>
         <Trash size={20} />
       </button>

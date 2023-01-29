@@ -22,6 +22,12 @@
   height: var(--size-52);
 }
 
+.taskInput input:focus {
+  outline: none;
+  border: 1px solid var(--purple);
+  color: var(--gray-100);
+}
+
 .taskInput button {
   background-color: var(--blue);
   color: var(--gray-100);

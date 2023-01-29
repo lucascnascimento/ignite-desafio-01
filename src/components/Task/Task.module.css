@@ -1,16 +1,17 @@
 .task {
   display: flex;
-  gap: var(--size-12);
   align-items: flex-start;
   padding: var(--size-16);
   background-color: var(--gray-500);
   border: 1px solid #333333;
   border-radius: 8px;
+  box-sizing: border-box;
+  transition: color 0.5s linear;
 }
 
 .checkboxContainer {
   position: relative;
-  margin-right: var(--size-16);
+  margin-right: var(--size-32);
 }
 
 .checkboxContainer input {
@@ -19,6 +20,7 @@
   cursor: pointer;
   height: 0;
   width: 0;
+  transition: color 0.5s linear;
 }
 
 .checkmark {
@@ -78,9 +80,17 @@
   border-radius: 4px;
   padding: 2px;
   cursor: pointer;
+  margin: 0px 0px 0px auto;
 }
 
 .task button:hover {
   color: var(--danger);
   background-color: var(--gray-300);
+}
+
+.taskDone {
+  text-decoration: line-through;
+  border: none;
+  padding: calc(var(--size-16) + 1px);
+  color: var(--gray-300);
 }

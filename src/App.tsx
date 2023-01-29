@@ -39,7 +39,6 @@ function App() {
   };
 
   const checkTask = (id: string, isDone: boolean) => {
-    console.log(tasks);
     const newTasks = tasks.reduce<TaskType[]>((tasks, currentTask) => {
       if (currentTask.id === id) return [...tasks, { ...currentTask, isDone }];
 
